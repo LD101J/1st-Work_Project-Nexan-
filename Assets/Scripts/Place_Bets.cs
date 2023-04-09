@@ -9,22 +9,21 @@ namespace Nexan_Fight_Club
     public class Place_Bets : MonoBehaviour
     {
         #region Variables
-
-        [SerializeField] Button playButton;
+        [SerializeField] private string enteredName; //name im entering
+        [SerializeField] private GameObject inputField; //where im typing the name
+        [SerializeField] private GameObject outputText; //where the text outputs
         #endregion
-        private void Awake()
+        public void StoreName()
         {
-           // Hide();
-        }
-        private void Update()
-        {
+            enteredName = inputField.GetComponent<Text>().text;
+            outputText.GetComponent<Text>().text = enteredName;
             
         }
-
         private void Hide()
         {
             gameObject.SetActive(false);//hiding the place bets window
         }
+      
     }
 
 }
